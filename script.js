@@ -148,54 +148,12 @@ function showNotification(message) {
     const notification = document.createElement('div');
     notification.className = 'notification';
     notification.textContent = message;
-    notification.style.cssText = `
-        position: fixed;
-        bottom: 30px;
-        right: 30px;
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        color: white;
-        padding: 1rem 2rem;
-        border-radius: 50px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-        z-index: 10000;
-        animation: slideIn 0.3s ease;
-        font-weight: 500;
-    `;
-    
-    // Add animation keyframes if not already added
-    if (!document.querySelector('#notification-animations')) {
-        const style = document.createElement('style');
-        style.id = 'notification-animations';
-        style.textContent = `
-            @keyframes slideIn {
-                from {
-                    transform: translateX(400px);
-                    opacity: 0;
-                }
-                to {
-                    transform: translateX(0);
-                    opacity: 1;
-                }
-            }
-            @keyframes slideOut {
-                from {
-                    transform: translateX(0);
-                    opacity: 1;
-                }
-                to {
-                    transform: translateX(400px);
-                    opacity: 0;
-                }
-            }
-        `;
-        document.head.appendChild(style);
-    }
     
     document.body.appendChild(notification);
     
     // Remove notification after 3 seconds
     setTimeout(() => {
-        notification.style.animation = 'slideOut 0.3s ease';
+        notification.classList.add('notification-exit');
         setTimeout(() => {
             notification.remove();
         }, 300);
@@ -225,27 +183,16 @@ window.addEventListener('scroll', () => {
     });
 });
 
-// ===== Cursor Trail Effect (optional creative touch) =====
-let cursorTrail = [];
-const maxTrailLength = 10;
-
-document.addEventListener('mousemove', (e) => {
-    // Only on larger screens
-    if (window.innerWidth > 768) {
-        cursorTrail.push({x: e.clientX, y: e.clientY});
-        
-        if (cursorTrail.length > maxTrailLength) {
-            cursorTrail.shift();
-        }
-    }
-});
+// Note: Cursor trail effect removed - was collecting data but not rendering
+// Can be re-implemented in the future with proper canvas/SVG rendering
 
 // ===== Easter Egg: Konami Code =====
-let konamiCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
+let konamiCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'KeyB', 'KeyA'];
 let konamiIndex = 0;
 
 document.addEventListener('keydown', (e) => {
-    if (e.key === konamiCode[konamiIndex]) {
+    const key = e.key.startsWith('Arrow') ? e.key : e.code;
+    if (key === konamiCode[konamiIndex]) {
         konamiIndex++;
         if (konamiIndex === konamiCode.length) {
             activateEasterEgg();
@@ -260,24 +207,11 @@ function activateEasterEgg() {
     showNotification('🎮 Konami Code Activated! You found the secret!');
     
     // Add rainbow effect to the page
-    document.body.style.animation = 'rainbow 3s ease infinite';
-    
-    // Add rainbow animation if not already added
-    if (!document.querySelector('#rainbow-animation')) {
-        const style = document.createElement('style');
-        style.id = 'rainbow-animation';
-        style.textContent = `
-            @keyframes rainbow {
-                0% { filter: hue-rotate(0deg); }
-                100% { filter: hue-rotate(360deg); }
-            }
-        `;
-        document.head.appendChild(style);
-    }
+    document.body.classList.add('rainbow-effect');
     
     // Remove effect after 3 seconds
     setTimeout(() => {
-        document.body.style.animation = '';
+        document.body.classList.remove('rainbow-effect');
     }, 3000);
 }
 

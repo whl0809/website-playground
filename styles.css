@@ -262,7 +262,7 @@ body {
 
 .photo-icon {
     font-size: 4rem;
-    filter: brightness(0) invert(1);
+    opacity: 0.9;
 }
 
 .photo-overlay {
@@ -326,7 +326,7 @@ body {
 
 .video-icon {
     font-size: 5rem;
-    filter: brightness(0) invert(1);
+    opacity: 0.9;
 }
 
 .play-button {
@@ -520,4 +520,55 @@ body {
     .cta-button {
         padding: 0.75rem 2rem;
     }
+}
+
+/* ===== Notification Styles ===== */
+.notification {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    z-index: 10000;
+    font-weight: 500;
+    animation: slideIn 0.3s ease;
+}
+
+.notification-exit {
+    animation: slideOut 0.3s ease;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(400px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideOut {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateX(400px);
+        opacity: 0;
+    }
+}
+
+@keyframes rainbow {
+    0% { filter: hue-rotate(0deg); }
+    100% { filter: hue-rotate(360deg); }
+}
+
+/* Rainbow effect for easter egg */
+.rainbow-effect {
+    animation: rainbow 3s ease infinite;
 }
