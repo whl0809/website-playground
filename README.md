@@ -1,72 +1,113 @@
-<header>
+# My Personal Website 🎨
 
-<!--
-  <<< Author notes: Course header >>>
-  Include a 1280×640 image, course title in sentence case, and a concise description in emphasis.
-  In your repository settings: enable template repository, add your 1280×640 social image, auto delete head branches.
-  Add your open source license, GitHub uses MIT license.
--->
+_An interactive and creative personal website featuring photography, gaming clips, and blog posts._
 
-# GitHub Pages
+![Website Preview](https://github.com/user-attachments/assets/d3868583-100f-4ee4-a36a-114a18515fb3)
 
-_Create a site or blog from your GitHub repositories with GitHub Pages._
+## 🌟 Features
 
-</header>
+This personal website includes:
 
-<!--
-  <<< Author notes: Course start >>>
-  Include start button, a note about Actions minutes,
-  and tell the learner why they should take the course.
--->
+- **📸 Photo Gallery**: Showcase your photography with an interactive grid layout featuring hover effects and smooth animations
+- **🎮 Gaming Highlights**: Display your epic gaming moments with video placeholders and play buttons
+- **✍️ Blog Section**: Share your thoughts on photography, gaming, web development, and more
+- **🎭 Interactive Elements**: 
+  - Smooth scroll navigation
+  - Hover effects and animations
+  - Floating background animations
+  - Notification system
+  - Easter egg (try the Konami Code: ↑↑↓↓←→←→BA)
+- **📱 Responsive Design**: Looks great on desktop, tablet, and mobile devices
 
-## Welcome
+## 🚀 Getting Started
 
-With GitHub Pages, you can host project blogs, documentation, resumes, portfolios, or any other static content you'd like. Your GitHub repository can easily become its own website. In this course, we'll show you how to set up your own site or blog using GitHub Pages.
+### View the Website Locally
 
-- **Who is this for**: Beginners, students, project maintainers, small businesses.
-- **What you'll learn**: How to build a GitHub Pages site.
-- **What you'll build**: We'll build a simple GitHub Pages site with a blog. We'll use [Jekyll](https://jekyllrb.com), a static site generator.
-- **Prerequisites**: If you need to learn about branches, commits, and pull requests, take [Introduction to GitHub](https://github.com/skills/introduction-to-github) first.
-- **How long**: This course takes less than one hour to complete.
+1. Clone this repository:
+   ```bash
+   git clone https://github.com/whl0809/website-playground.git
+   cd website-playground
+   ```
 
-In this course, you will:
+2. Open `index.html` in your web browser, or start a local server:
+   ```bash
+   # Using Python 3
+   python3 -m http.server 8000
+   
+   # Using Python 2
+   python -m SimpleHTTPServer 8000
+   
+   # Using Node.js (if you have http-server installed)
+   npx http-server
+   ```
 
-1. Enable GitHub Pages
-2. Configure your site
-3. Customize your home page
-4. Create a blog post
-5. Merge your pull request
+3. Open your browser and navigate to `http://localhost:8000`
 
-### How to start this course
+### Customize Your Website
 
-<!-- For start course, run in JavaScript:
-'https://github.com/new?' + new URLSearchParams({
-  template_owner: 'skills',
-  template_name: 'github-pages',
-  owner: '@me',
-  name: 'skills-github-pages',
-  description: 'My clone repository',
-  visibility: 'public',
-}).toString()
--->
+1. **Update Content in `index.html`**:
+   - Change the title and navigation menu
+   - Add your own photo descriptions
+   - Update gaming clips with your videos
+   - Write your own blog posts
 
-[![start-course](https://user-images.githubusercontent.com/1221423/235727646-4a590299-ffe5-480d-8cd5-8194ea184546.svg)](https://github.com/new?template_owner=skills&template_name=github-pages&owner=%40me&name=skills-github-pages&description=My+clone+repository&visibility=public)
+2. **Modify Styles in `styles.css`**:
+   - Change color scheme (edit CSS variables in `:root`)
+   - Adjust layouts and spacing
+   - Customize animations and effects
 
-1. Right-click **Start course** and open the link in a new tab.
-2. In the new tab, most of the prompts will automatically fill in for you.
-   - For owner, choose your personal account or an organization to host the repository.
-   - We recommend creating a public repository, as private repositories will [use Actions minutes](https://docs.github.com/en/billing/managing-billing-for-github-actions/about-billing-for-github-actions).
-   - Scroll down and click the **Create repository** button at the bottom of the form.
-3. After your new repository is created, wait about 20 seconds, then refresh the page. Follow the step-by-step instructions in the new repository's README.
+3. **Enhance Interactivity in `script.js`**:
+   - Add new interactive features
+   - Modify notification behavior
+   - Create custom animations
 
-<footer>
+## 📂 File Structure
 
-<!--
-  <<< Author notes: Footer >>>
-  Add a link to get support, GitHub status page, code of conduct, license link.
--->
+```
+website-playground/
+├── index.html      # Main HTML structure
+├── styles.css      # All styling and animations
+├── script.js       # Interactive features and effects
+└── README.md       # This file
+```
+
+## 🎨 Color Palette
+
+The website uses a modern gradient color scheme:
+- Primary: `#6366f1` (Indigo)
+- Secondary: `#8b5cf6` (Purple)
+- Accent: `#ec4899` (Pink)
+- Background: `#f8fafc` (Light gray)
+- Dark: `#1a1a2e` (Navy)
+
+## 💡 Tips for Learning
+
+This website is a great learning resource for:
+- HTML5 semantic structure
+- CSS Grid and Flexbox layouts
+- CSS animations and transitions
+- Vanilla JavaScript DOM manipulation
+- Intersection Observer API
+- Responsive web design
+
+## 🔧 Next Steps
+
+To make this website truly yours:
+1. Replace placeholder emojis with actual images
+2. Add real video embeds (YouTube, Twitch, etc.)
+3. Create individual blog post pages
+4. Add a contact form
+5. Enable GitHub Pages to host it for free
+
+## 📚 Resources
+
+- [MDN Web Docs](https://developer.mozilla.org/) - Comprehensive web development documentation
+- [CSS Tricks](https://css-tricks.com/) - CSS tips and techniques
+- [GitHub Pages](https://pages.github.com/) - Free hosting for your website
 
 ---
+
+<footer>
 
 Get help: [Post in our discussion board](https://github.com/orgs/skills/discussions/categories/github-pages) &bull; [Review the GitHub status page](https://www.githubstatus.com/)
 
